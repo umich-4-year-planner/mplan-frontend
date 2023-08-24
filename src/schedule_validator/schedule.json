@@ -1,0 +1,110 @@
+{
+    "name": "My Schedule",
+    "majors": ["Computer Engineering"],
+    "minors": [],
+    "terms": [
+        {
+            "name": "High School",
+            "year": { "$numberInt": "2022" },
+            "courses": [
+                {"subject":"MATH","number":"120","course_id":"MATH120","name":"AP Calculus BC (Calc 1)","credits":"4","lsa_distributions":[],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":true,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/MATH%20120/"},
+                {"subject":"STATS","number":"180","course_id":"STATS180","name":"AP Statistics","credits":"3","lsa_distributions":[],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":true,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/STATS%20180/"}
+            ]
+        },
+        {
+            "name": "Fall 2022",
+            "year": { "$numberInt": "2022" },
+            "courses": [
+                {"subject":"ENGR","number":"151","course_id":"ENGR151","name":"Accelerated Introduction to Computers and Programming","credits":4,"lsa_distributions":["BS"],"credit_exclusions":["ENGR101","EECS183"],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/ENGR%20151"},
+                {"subject":"ENGR","number":"110","course_id":"ENGR110","name":"Design Your Engineering Experience","credits":"2","lsa_distributions":[],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":true,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/ENGR%20110/"},
+                {"subject":"MATH","number":"156","course_id":"MATH156","name":"Applied Honors Calculus II","credits":4,"lsa_distributions":["BS","MSA","QR/1"],"credit_exclusions":["MATH116"],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/MATH%20156"},
+                {"subject":"PHYSICS","number":"140","course_id":"PHYSICS140","name":"General Physics I","credits":4,"lsa_distributions":["BS","NS","QR/1"],"credit_exclusions":["PHYSICS135","PHYSICS160","BIOPHYS/PHYSICS150"],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/PHYSICS%20140"},
+                {"subject":"PHYSICS","number":"141","course_id":"PHYSICS141","name":"Elementary Laboratory I","credits":1,"lsa_distributions":["BS","NS"],"credit_exclusions":["PHYSICS136","PHYSICS161","BIOPHYS/PHYSICS151"],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/PHYSICS%20141"}
+            ]
+        },
+        {
+            "name": "Winter 2023",
+            "year": { "$numberInt": "2023" },
+            "courses": [
+                {"subject":"CHEM","number":"130","course_id":"CHEM130","name":"General Chemistry: Macroscopic Investigations and Reaction Principles","credits":3,"lsa_distributions":["BS","NS","QR/2"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/CHEM%20130"},
+                {"subject":"ENGR","number":"100","course_id":"ENGR100","name":"Intro Engineering","credits":"4","lsa_distributions":[],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":true,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/ENGR%20100/"},
+                {"subject":"EECS","number":"280","course_id":"EECS280","name":"Programming and Introductory Data Structures","credits":4,"lsa_distributions":["BS","MSA"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/EECS%20280"},
+                {"subject":"LING","number":"193","course_id":"LING193","name":"Social Sciences Topics in Linguistics","credits":3,"lsa_distributions":["SS"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":100,"elections":100},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/LING%20193"},
+                {"subject":"MATH","number":"215","course_id":"MATH215","name":"Multivariable and Vector Calculus","credits":4,"lsa_distributions":["BS","MSA","QR/1"],"credit_exclusions":["MATH255","MATH285"],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/MATH%20215"}
+            ]
+        },
+        {
+            "name": "Spring/Summer 2023",
+            "year": { "$numberInt": "2023" },
+            "courses": [
+                {"subject":"PHYSICS","number":"240","course_id":"PHYSICS240","name":"General Physics II","credits":4,"lsa_distributions":["BS","NS","QR/1"],"credit_exclusions":["PHYSICS235","PHYSICS260","BIOPHYS/PHYSICS250"],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/PHYSICS%20240"},
+                {"subject":"PHYSICS","number":"241","course_id":"PHYSICS241","name":"Elementary Laboratory II","credits":1,"lsa_distributions":["BS","NS"],"credit_exclusions":["PHYSICS236","PHYSICS261","BIOPHYS/PHYSICS251"],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/PHYSICS%20241"},
+                {
+                    "course_id": "STDABRD300",
+                    "subject": "STDABRD",
+                    "number": 300,
+                    "credits": 3,
+                    "lsa_distributions": ["HU"]
+                }
+            ]
+        },
+        {
+            "name": "Fall 2023",
+            "year": { "$numberInt": "2023" },
+            "courses": [
+                {"subject":"EECS","number":"203","course_id":"EECS203","name":"Discrete Math","credits":4,"lsa_distributions":["BS","MSA","QR/1"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/EECS%20203"},
+                {"subject":"EECS","number":"215","course_id":"EECS215","name":"Introduction to Electronic Circuits","credits":4,"lsa_distributions":["BS"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/EECS%20215"},
+                {"subject":"EECS","number":"270","course_id":"EECS270","name":"Introduction to Logic Design","credits":4,"lsa_distributions":["BS","MSA"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/EECS%20270"},
+                {"subject":"MATH","number":"216","course_id":"MATH216","name":"Introduction to Differential Equations","credits":4,"lsa_distributions":["BS","MSA","QR/1"],"credit_exclusions":["MATH286","MATH316"],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/MATH%20216"}
+            ]
+        },
+        {
+            "name": "Winter 2024",
+            "year": { "$numberInt": "2024" },
+            "courses": [
+                {"subject":"EECS","number":"281","course_id":"EECS281","name":"Data Structures and Algorithms","credits":4,"lsa_distributions":["BS"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/EECS%20281"},
+                {"subject":"CHEM","number":"125","course_id":"CHEM125","name":"General Chemistry Laboratory I","credits":1,"lsa_distributions":["BS","NS"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/CHEM%20125"},
+                {"subject":"PHYSICS","number":"340","course_id":"PHYSICS340","name":"Waves, Heat, and Light","credits":3,"lsa_distributions":["BS"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/PHYSICS%20340"},
+                {"subject":"THEORY","number":"135","course_id":"THEORY135","name":"Intro Music Theory Music Theory Major","credits":3,"lsa_distributions":[""],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":100,"elections":100},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/THEORY%20135"},
+                {"subject":"MATH","number":"417","course_id":"MATH417","name":"Matrix Algebra I","credits":3,"lsa_distributions":["BS"],"credit_exclusions":["MATH214","MATH217","MATH419","MATH420"],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/MATH%20417"}
+
+            ]
+        },
+        {
+            "name": "Fall 2024",
+            "year": { "$numberInt": "2024" },
+            "courses": [
+                {"subject":"EECS","number":"216","course_id":"EECS216","name":"Introduction to Signals and Systems","credits":4,"lsa_distributions":["BS"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/EECS%20216"},
+                {"subject":"EECS","number":"370","course_id":"EECS370","name":"Introduction to Computer Organization","credits":4,"lsa_distributions":["BS"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/EECS%20370"},
+                {"subject":"TCHNCLCM","number":"300","course_id":"TCHNCLCM300","name":"Technical Communication for Electrical and Computer Science","credits":1,"lsa_distributions":["BS"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/TCHNCLCM%20300"},
+                {"subject":"ECON","number":"101","course_id":"ECON101","name":"Principles of Economics I","credits":4,"lsa_distributions":["SS","QR/2"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/ECON%20101"}
+            ]
+        },
+        {
+            "name": "Winter 2025",
+            "year": { "$numberInt": "2025" },
+            "courses": [
+                {"subject":"MATH","number":"425","course_id":"MATH425","name":"Introduction to Probability","credits":3,"lsa_distributions":["BS"],"credit_exclusions":[],"crosslists":["STATS425"],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/MATH%20425"},
+                {"subject":"EECS","number":"373","course_id":"EECS373","name":"Introduction to Embedded System Design","credits":4,"lsa_distributions":["BS"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/EECS%20373"},
+                {"subject":"MATH","number":"354","course_id":"MATH354","name":"Fourier Analysis and its Applications","credits":3,"lsa_distributions":["BS"],"credit_exclusions":["MATH450","MATH454"],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/MATH%20354"}
+            ]
+        },
+        {
+            "name": "Fall 2025",
+            "year": { "$numberInt": "2025" },
+            "courses": []
+        },
+        {
+            "name": "Winter 2026",
+            "year": { "$numberInt": "2026" },
+            "courses": [
+                {"subject":"EECS","number":"496","course_id":"EECS496","name":"Major Design Experience-Professionalism","credits":2,"lsa_distributions":["BS"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/EECS%20496"},
+                {"subject":"EECS","number":"470","course_id":"EECS470","name":"Computer Architecture","credits":4,"lsa_distributions":["BS"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/EECS%20470"},
+                {"subject":"TCHNCLCM","number":"496","course_id":"TCHNCLCM496","name":"Advanced Technical Communication for Electrical Engineering and Computer Engineering","credits":2,"lsa_distributions":["BS"],"credit_exclusions":[],"crosslists":[],"repeatability":{"credits":0,"elections":0},"nonLSA":false,"preRequisites":[],"atlasLink":"https://atlas.ai.umich.edu/course/TCHNCLCM%20496"}
+            ]
+        }
+    ],
+    "_id": { "$oid": "643ccff733e384a68ee94e75" },
+    "createdAt": { "$date": { "$numberLong": "1681841849274" } },
+    "updatedAt": { "$date": { "$numberLong": "1681841849274" } }
+}

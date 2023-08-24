@@ -1,0 +1,118 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	/* || COLORS */
+	--HEADER-COLOR: #00274c;
+	--HEADER-ACCENT: #ffc20f;
+}
+
+body {
+	min-height: 100vh;
+	font-family: "Roboto", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* HEADER */
+.header {
+	background-color: var(--HEADER-COLOR);
+	color: var(--HEADER-ACCENT);
+	width: 100%;
+	font-size: 5rem;
+	font-weight: bolder;
+	height: 6rem;
+	display: flex;
+	align-items: center;
+	position: sticky;
+	top: 0;
+}
+
+.header .logo {
+	padding: 1rem;
+}
+
+/* MAIN */
+
+.main {
+	min-height: calc(100vh - 9rem);
+	background-image: linear-gradient(white, var(--HEADER-ACCENT));
+}
+
+.main .schedule-validator {
+	min-height: calc(100vh - 9rem);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+/* SCHEDULE */
+
+.schedule-validator .schedule {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 1rem;
+}
+
+/* SCHEDULE TABLES */
+.schedule-validator .schedule-term {
+	border: 2px solid black;
+	border-radius: 15px;
+	background-color: papayawhip;
+  text-align: center;
+}
+
+.schedule-term .schedule-table {
+	border-spacing: 0;
+  border-radius: 15px;
+	font-size: 0.9em;
+	font-family: sans-serif;
+	min-width: 400px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.schedule-term h3 {
+  padding: 1rem 0;
+}
+
+.schedule-table thead tr {
+	background-color: var(--HEADER-COLOR);
+	color: #ffffff;
+	text-align: left;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 12px 15px;
+}
+
+.schedule-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.schedule-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.schedule-term .search-course label {
+  position: absolute;
+  left: -100000px;
+}
+
+/* FOOTER */
+
+.footer {
+	background-color: var(--HEADER-COLOR);
+	color: var(--HEADER-ACCENT);
+	width: 100%;
+	height: 3rem;
+	display: flex;
+	position: sticky;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+}
