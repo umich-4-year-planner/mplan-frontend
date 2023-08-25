@@ -1,6 +1,6 @@
-const Report = () => {
+const Report = ({report}) => {
   return (
-    <div>Report</div>
+    <div>{JSON.stringify(report)}</div>
   )
 }
 export default Report
