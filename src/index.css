@@ -47,7 +47,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
-	align-items: center;
+	align-items: flex-start;
 }
 
 /* SCHEDULE */
@@ -56,28 +56,30 @@ body {
 	display: flex;
 	flex-flow: column nowrap;
 	gap: 1rem;
+	margin: 1rem 0;
 }
 
 /* SCHEDULE TABLES */
-.schedule-validator .schedule-term {
+.schedule-validator .schedule-term{
 	border: 2px solid black;
 	border-radius: 15px;
 	background-color: papayawhip;
-  text-align: center;
+	text-align: center;
 }
 
 .schedule-term .schedule-table {
 	border-spacing: 0;
-  border-radius: 15px;
+	border-radius: 15px;
 	font-size: 0.9em;
 	font-family: sans-serif;
 	min-width: 400px;
+	max-width: 500px;
 	width: 100%;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .schedule-term h3 {
-  padding: 1rem 0;
+	padding: 1rem 0;
 }
 
 .schedule-table thead tr {
@@ -88,22 +90,28 @@ body {
 
 .schedule-table th,
 .schedule-table td {
-    padding: 12px 15px;
+	padding: 12px 15px;
 }
 
 .schedule-table tbody tr {
-  border-bottom: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
 }
 
 .schedule-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
+	background-color: #f3f3f3;
 }
 
 .schedule-term .search-course label {
-  position: absolute;
-  left: -100000px;
+	position: absolute;
+	left: -100000px;
 }
 
+.report .requirement-group {
+	border: 2px solid black;
+	border-radius: 15px;
+	background-color: papayawhip;
+	text-align: center;
+}
 /* FOOTER */
 
 .footer {

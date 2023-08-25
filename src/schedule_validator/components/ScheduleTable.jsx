@@ -6,6 +6,7 @@ const ScheduleTable = ({
   schedule,
   handleChangeCourse,
   handleAddCourse,
+  handleDeleteCourse
 }) => {
   return (
     <div className="schedule-term">
@@ -27,6 +28,7 @@ const ScheduleTable = ({
                 term={term}
                 key={course.course_id}
                 handleChangeCourse={handleChangeCourse}
+                handleDeleteCourse={handleDeleteCourse}
               />
             );
           })}

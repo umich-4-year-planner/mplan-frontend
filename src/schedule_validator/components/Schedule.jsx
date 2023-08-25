@@ -1,6 +1,6 @@
 import ScheduleTable from "./ScheduleTable.jsx";
 
-const Schedule = ({ schedule, handleChangeCourse, handleAddCourse}) => {
+const Schedule = ({ schedule, handleChangeCourse, handleAddCourse, handleDeleteCourse}) => {
   return (
     <div className="schedule">
       {schedule.terms.map((term) => {
@@ -11,6 +11,7 @@ const Schedule = ({ schedule, handleChangeCourse, handleAddCourse}) => {
             schedule={schedule}
             handleChangeCourse={handleChangeCourse}
             handleAddCourse={handleAddCourse}
+            handleDeleteCourse={handleDeleteCourse}
           />
         );
       })}
