@@ -1,4 +1,5 @@
 import ScheduleTableRow from "./ScheduleTableRow.jsx";
+import ScheduleTableFooter from "./ScheduleTableFooter.jsx";
 import EmptyTableRow from "./EmptyTableRow.jsx";
 
 const ScheduleTable = ({
@@ -38,6 +39,7 @@ const ScheduleTable = ({
             schedule={schedule}
             term={term}
           />
+          <ScheduleTableFooter term={term} schedule={schedule}/>
         </tbody>
       </table>
     </div>

@@ -7,6 +7,7 @@ const RequirementGroup = ({ group }) => {
                     <tr>
                         <th>Requirement</th>
                         <th>Fufilled</th>
+                        <th>Credits Fufilled</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -15,6 +16,7 @@ const RequirementGroup = ({ group }) => {
                             <tr>
                                 <td>{requirement.name}</td>
                                 <td>{requirement.fufilled ? <>✅</> : <>❌</>}</td>
+                                
                             </tr>
                         )
                     })}

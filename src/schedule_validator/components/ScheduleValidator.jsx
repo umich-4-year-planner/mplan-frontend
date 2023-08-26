@@ -2,10 +2,17 @@ import { useEffect, useState } from "react";
 
 import Report from "./Report.jsx";
 import Schedule from "./Schedule.jsx";
+import ScheduleToolbar from "./ScheduleToolbar.jsx";
 
 import generateEmptySchedule from "../lib/generateEmptySchedule.js";
 
 const ScheduleValidator = () => {
+	const [major, setMajor] = useState(localStorage.getItem("major") || "");
+	const [year, setYear] = useState(localStorage.getItem("year") || 0);
+
+	const [majorInput, setMajorInput] = useState("");
+	const [yearInput, setYearInput] = useState(2020);
+
 	const [schedule, setSchedule] = useState(
 		JSON.parse(localStorage.getItem("schedule")) ||
 			generateEmptySchedule(2022, "Computer Engineering")
@@ -14,8 +21,6 @@ const ScheduleValidator = () => {
 	const [report, setReport] = useState({});
 
 	useEffect(() => {
-		console.log(`schedule useEffect called`);
-		console.log(schedule);
 		localStorage.setItem("schedule", JSON.stringify(schedule));
 
 		const fetchReport = async (report) => {
@@ -42,6 +47,21 @@ const ScheduleValidator = () => {
 		fetchReport(report);
 	}, [schedule]);
 
+	useEffect(() => {
+		localStorage.setItem("major", major);
+	}, [major])
+
+	useEffect(() => {
+		localStorage.setItem("year", year);
+	}, [major])
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		if (!majorInput || !yearInput) return;
+		setMajor(majorInput);
+		setYear(yearInput);
+	};
+
 	const handleChangeCourse = (term, schedule, courseJSON, newCourse) => {
 		let newSchedule = structuredClone(schedule);
 		let termIndex = schedule.terms.findIndex((i) => i.id === term.id);
@@ -64,21 +84,39 @@ const ScheduleValidator = () => {
 		let termIndex = schedule.terms.findIndex((i) => i.id === term.id);
 		let courseIndex = schedule.terms[termIndex].courses.findIndex(
 			(i) => i.course_id === newCourse.course_id
-		)
+		);
 		newSchedule.terms[termIndex].courses.splice(courseIndex, 1);
 		setSchedule(newSchedule);
-	}
+	};
 
 	return (
 		<div className="schedule-validator">
-			<Schedule
-				schedule={schedule}
-				setSchedule={setSchedule}
-				handleAddCourse={handleAddCourse}
-				handleChangeCourse={handleChangeCourse}
-				handleDeleteCourse={handleDeleteCourse}
+			<ScheduleToolbar
+				yearInput={yearInput}
+				setYearInput={setYearInput}
+				majorInput={majorInput}
+				setMajorInput={setMajorInput}
+				handleSubmit={handleSubmit}
 			/>
-			<Report report={report} />
+			<div>
+				{major} {year}
+			</div>
+			<div className="schedule-report-container">
+				{year !== 0 ? (
+					<>
+						<Schedule
+							schedule={schedule}
+							setSchedule={setSchedule}
+							handleAddCourse={handleAddCourse}
+							handleChangeCourse={handleChangeCourse}
+							handleDeleteCourse={handleDeleteCourse}
+						/>
+						<Report report={report} />
+					</>
+				) : (
+					<></>
+				)}
+			</div>
 		</div>
 	);
 };

@@ -42,7 +42,11 @@ body {
 	background-image: linear-gradient(white, var(--HEADER-ACCENT));
 }
 
-.main .schedule-validator {
+.schedule-toolbar {
+	background-color: white;
+}
+
+.main .schedule-report-container {
 	min-height: calc(100vh - 9rem);
 	display: flex;
 	flex-wrap: wrap;
@@ -106,11 +110,17 @@ body {
 	left: -100000px;
 }
 
+
 .report .requirement-group {
 	border: 2px solid black;
 	border-radius: 15px;
 	background-color: papayawhip;
 	text-align: center;
+}
+
+.schedule-table tbody tr.schedule-table-footer {
+	background-color: var(--HEADER-COLOR);
+	color: white;
 }
 /* FOOTER */
 

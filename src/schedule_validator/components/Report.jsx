@@ -4,7 +4,7 @@ const Report = ({ report }) => {
 	console.log(`REPORT: `, !report, report);
 	return (
 		<div className="report">
-			{!!report ? (
+			{ Object.keys(report).length !== 0 ? (
 				<>
 					{report.requirement_groups.map((group) => {
 						return <RequirementGroup key={group.name} group={group} />;
