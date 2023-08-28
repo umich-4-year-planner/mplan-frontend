@@ -22,7 +22,7 @@ const ScheduleValidator = () => {
 		}
 
 		localStorage.setItem("schedule", JSON.stringify(schedule));
-		const domain = process.env.NODE_ENV === "production" ? "mplan.onrender.com" : "localhost:4000";
+		const domain = process.env.NODE_ENV === "production" ? "mplan-api.onrender.com" : "localhost:4000";
 
 		const fetchReport = async (report) => {
 			if (!report) return;

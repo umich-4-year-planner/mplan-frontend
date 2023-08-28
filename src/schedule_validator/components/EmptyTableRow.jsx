@@ -6,9 +6,10 @@ const EmptyTableRow = ({ handleAddCourse, schedule, term }) => {
 
   useEffect(() => {
     const fetchCourseAndSave = async () => {
+      const domain = process.env.NODE_ENV === "production" ? "mplan-api.onrender.com" : "localhost:4000";
       try {
         const response = await fetch(
-          `http://localhost:4000/courses/${courseInput.toUpperCase() || "none"}`
+          `http://${domain}/courses/${courseInput.toUpperCase() || "none"}`
         );
         let courseJSON = await response.json();
 
