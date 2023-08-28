@@ -13,11 +13,11 @@ const ScheduleTableRow = ({ course, schedule, term, handleChangeCourse, handleDe
 			return
 		}
 
-		const domain = process.env.NODE_ENV === "production" ? "https://mplan-api.onrender.com" : "http://localhost:4000";
 		const fetchCourseAndSave = async () => {
 			try {
+				const baseUrl = process.env.REACT_APP_SERVER_BASE_URL;
 				const response = await fetch(
-					`${domain}/courses/${courseInput.toUpperCase() || "none"}`
+					`${baseUrl}/courses/${courseInput.toUpperCase() || "none"}`
 				);
 				let courseJSON = await response.json();
 
