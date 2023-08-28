@@ -17,7 +17,7 @@ const ScheduleTableRow = ({ course, schedule, term, handleChangeCourse, handleDe
 		const fetchCourseAndSave = async () => {
 			try {
 				const response = await fetch(
-					`http://${domain}/courses/${courseInput.toUpperCase() || "none"}`
+					`${domain}/courses/${courseInput.toUpperCase() || "none"}`
 				);
 				let courseJSON = await response.json();
 

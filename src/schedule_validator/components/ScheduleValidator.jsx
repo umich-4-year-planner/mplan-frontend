@@ -28,7 +28,7 @@ const ScheduleValidator = () => {
 			if (!report) return;
 			try {
 				const response = await fetch(
-					`http://${domain}/schedule-validator/validate-requirements/`,
+					`${domain}/schedule-validator/validate-requirements/`,
 					{
 						method: "POST",
 						headers: {
