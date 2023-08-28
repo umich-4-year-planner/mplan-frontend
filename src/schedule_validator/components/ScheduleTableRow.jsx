@@ -13,7 +13,7 @@ const ScheduleTableRow = ({ course, schedule, term, handleChangeCourse, handleDe
 			return
 		}
 
-		const domain = process.env.NODE_ENV === "production" ? "mplan-api.onrender.com" : "localhost:4000";
+		const domain = process.env.NODE_ENV === "production" ? "https://mplan-api.onrender.com" : "http://localhost:4000";
 		const fetchCourseAndSave = async () => {
 			try {
 				const response = await fetch(
