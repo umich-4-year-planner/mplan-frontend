@@ -1,43 +1,40 @@
-const ScheduleForm = ({yearInput, setYearInput, majorInput, setMajorInput, handleSubmit }) => {
+import { useEffect } from "react";
+
+const ScheduleForm = ({ scheduleMeta, handleSubmit }) => {
 	const majors = ["Computer Engineering", "Robotic"];
-    const years = [2020, 2021, 2022, 2023, 2024]
+	const years = [2020, 2021, 2022, 2023, 2024];
+
 	return (
 		<div>
 			<form
-				className="major-form"
+				className="schedule-form"
 				onSubmit={(e) => {
 					handleSubmit(e);
 				}}
 			>
-				<label htmlFor="majors">Major</label>
-				<select
-					name="majors"
-					id="majors"
-                    value={majorInput}
-					onChange={(e) => {
-						setMajorInput(e.target.value);
-					}}
-				>
+				<label htmlFor="major">Major</label>
+				<select name="major" id="major">
 					{majors.map((mjr) => {
-						return <option value={mjr}>{mjr}</option>;
+						return (
+							<option key={mjr} value={mjr}>
+								{mjr}
+							</option>
+						);
 					})}
 				</select>
 
-                <label htmlFor="years">Year</label>
-				<select
-					name="years"
-					id="years"
-                    value={yearInput}
-					onChange={(e) => {
-						setYearInput(e.target.value);
-					}}
-				>
+				<label htmlFor="year">Year</label>
+				<select name="year" id="year">
 					{years.map((yr) => {
-						return <option value={`${yr}`}>{yr}</option>;
+						return (
+							<option key={yr} value={`${yr}`}>
+								{yr}
+							</option>
+						);
 					})}
 				</select>
 
-				<button type="submit">Submit</button>
+				<button type="submit"> Make New Schedule</button>
 			</form>
 		</div>
 	);

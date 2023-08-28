@@ -1,7 +1,6 @@
 import RequirementGroup from "./RequirementGroup";
 
 const Report = ({ report }) => {
-	console.log(`REPORT: `, !report, report);
 	return (
 		<div className="report">
 			{ Object.keys(report).length !== 0 ? (

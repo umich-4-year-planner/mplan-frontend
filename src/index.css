@@ -42,42 +42,84 @@ body {
 	background-image: linear-gradient(white, var(--HEADER-ACCENT));
 }
 
-.schedule-toolbar {
-	background-color: white;
+/* SCHEDULE VALIDATOR*/
+
+.schedule-validator {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 1rem;
+	align-items: center;
 }
 
-.main .schedule-report-container {
+.main .schedule-validator .schedule-report-container {
 	min-height: calc(100vh - 9rem);
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	align-items: flex-start;
 }
 
+/* SCHEDULE TOOLBAR */
+
+.schedule-toolbar {
+	padding: 1rem;
+}
+
+.schedule-toolbar .schedule-form {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	gap: .2rem;
+}
+
+.schedule-toolbar :is(select, button) {
+	padding: 10px 10px;
+	border-radius: 4px;
+	font-size: 1.2rem;
+}
+
+.schedule-toolbar button {	
+	background-color: var(--HEADER-COLOR);
+	color: var(--HEADER-ACCENT);
+}
+
+.schedule-toolbar button:hover {
+	background-color: hsl(209, 100%, 25%);
+	border: 2px solid var(--HEADER-ACCENT);
+}
+
+.schedule-toolbar select {
+	background-color: #f1f1f1;
+	border: none
+}
+
 /* SCHEDULE */
 
 .schedule-validator .schedule {
 	display: flex;
-	flex-flow: column nowrap;
+	flex-flow: row wrap;
+	flex-basis: 70%;
+	padding: 1rem;
 	gap: 1rem;
-	margin: 1rem 0;
 }
 
 /* SCHEDULE TABLES */
-.schedule-validator .schedule-term{
+.schedule-validator .schedule-term {
 	border: 2px solid black;
 	border-radius: 15px;
 	background-color: papayawhip;
 	text-align: center;
+	flex-basis: 32.4%;
+}
+
+.schedule-validator .schedule-term:first-child {
+	flex-basis: 100%
 }
 
 .schedule-term .schedule-table {
 	border-spacing: 0;
-	border-radius: 15px;
-	font-size: 0.9em;
 	font-family: sans-serif;
-	min-width: 400px;
-	max-width: 500px;
 	width: 100%;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
@@ -97,6 +139,7 @@ body {
 	padding: 12px 15px;
 }
 
+
 .schedule-table tbody tr {
 	border-bottom: 1px solid #dddddd;
 }
@@ -105,12 +148,31 @@ body {
 	background-color: #f3f3f3;
 }
 
+.schedule-table :is(form, form input) {
+	width: 8rem
+}
+
+.schedule-table form input {
+	background-color: rgba(0,0,0,0);
+	border: none;
+	font-weight: bolder;
+	font-size: 1rem;
+}
+
 .schedule-term .search-course label {
 	position: absolute;
 	left: -100000px;
 }
 
+/* REPORT */
 
+.report {
+	display: flex;
+	flex-flow: column nowrap;
+	flex-basis: 30%;
+	gap: 1rem;
+	padding: 1rem;
+}
 .report .requirement-group {
 	border: 2px solid black;
 	border-radius: 15px;

@@ -1,6 +1,9 @@
-const generateEmptySchedule = (year, major) => {
+const generateEmptySchedule = (scheduleMeta) => {
+  const {major, year} = scheduleMeta;
+  const yearInt = parseInt(year)
+
   let terms = [];
-  for (let i = year; i < year + 4; i++) {
+  for (let i = yearInt; i < yearInt + 4; i++) {
     terms.push({
       name: `Fall ${i}`,
       year: i,
@@ -12,6 +15,13 @@ const generateEmptySchedule = (year, major) => {
       name: `Winter ${i + 1}`,
       year: i,
       id: `w${i - 2000 + 1}`,
+      courses: [],
+    });
+
+    terms.push({
+      name: `Spring/Summer ${i + 1}`,
+      year: i,
+      id: `s${i - 2000 + 1}`,
       courses: [],
     });
   }
@@ -35,3 +45,5 @@ const generateEmptySchedule = (year, major) => {
 };
 
 export default generateEmptySchedule;
+
+

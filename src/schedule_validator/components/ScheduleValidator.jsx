@@ -6,29 +6,29 @@ import ScheduleToolbar from "./ScheduleToolbar.jsx";
 
 import generateEmptySchedule from "../lib/generateEmptySchedule.js";
 
+
 const ScheduleValidator = () => {
-	const [major, setMajor] = useState(localStorage.getItem("major") || "");
-	const [year, setYear] = useState(localStorage.getItem("year") || 0);
-
-	const [majorInput, setMajorInput] = useState("");
-	const [yearInput, setYearInput] = useState(2020);
-
-	const [schedule, setSchedule] = useState(
-		JSON.parse(localStorage.getItem("schedule")) ||
-			generateEmptySchedule(2022, "Computer Engineering")
-	);
+	const [scheduleMeta, setScheduleMeta] = useState({
+		major: localStorage.getItem("major") || "",
+		year: localStorage.getItem("year") || "",
+	});
+	const [schedule, setSchedule] = useState(JSON.parse(localStorage.getItem("schedule")) || {});
 
 	const [report, setReport] = useState({});
 
 	useEffect(() => {
+		if (isEmptyObject(schedule)) {
+			return;
+		}
+
 		localStorage.setItem("schedule", JSON.stringify(schedule));
+		const domain = process.env.NODE_ENV === "production" ? "mplan.onrender.com" : "localhost:4000";
 
 		const fetchReport = async (report) => {
 			if (!report) return;
-
 			try {
 				const response = await fetch(
-					`http://localhost:4000/schedule-validator/validate-requirements/`,
+					`http://${domain}/schedule-validator/validate-requirements/`,
 					{
 						method: "POST",
 						headers: {
@@ -40,7 +40,7 @@ const ScheduleValidator = () => {
 				let reportJSON = await response.json();
 				setReport(reportJSON);
 			} catch (err) {
-				console.log(err);
+				console.error(err);
 			}
 		};
 
@@ -48,18 +48,24 @@ const ScheduleValidator = () => {
 	}, [schedule]);
 
 	useEffect(() => {
-		localStorage.setItem("major", major);
-	}, [major])
+		const { major, year } = scheduleMeta;
+		if (major) localStorage.setItem("major", major);
+		if (year) localStorage.setItem("year", year);
 
-	useEffect(() => {
-		localStorage.setItem("year", year);
-	}, [major])
+		if (scheduleMeta.major && scheduleMeta.year) {
+			setSchedule(generateEmptySchedule(scheduleMeta));
+		}
+
+	}, [scheduleMeta]);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (!majorInput || !yearInput) return;
-		setMajor(majorInput);
-		setYear(yearInput);
+
+		const form = e.target;
+		const formData = new FormData(form);
+		const formJson = Object.fromEntries(formData.entries());
+
+		setScheduleMeta(formJson)
 	};
 
 	const handleChangeCourse = (term, schedule, courseJSON, newCourse) => {
@@ -92,17 +98,11 @@ const ScheduleValidator = () => {
 	return (
 		<div className="schedule-validator">
 			<ScheduleToolbar
-				yearInput={yearInput}
-				setYearInput={setYearInput}
-				majorInput={majorInput}
-				setMajorInput={setMajorInput}
 				handleSubmit={handleSubmit}
+				scheduleMeta={scheduleMeta}
 			/>
-			<div>
-				{major} {year}
-			</div>
 			<div className="schedule-report-container">
-				{year !== 0 ? (
+				{!isEmptyObject(schedule) ? (
 					<>
 						<Schedule
 							schedule={schedule}
@@ -110,14 +110,20 @@ const ScheduleValidator = () => {
 							handleAddCourse={handleAddCourse}
 							handleChangeCourse={handleChangeCourse}
 							handleDeleteCourse={handleDeleteCourse}
-						/>
+						/> 
 						<Report report={report} />
 					</>
 				) : (
-					<></>
+					<>
+						<p>empty</p>
+					</>
 				)}
 			</div>
 		</div>
 	);
 };
 export default ScheduleValidator;
+
+const isEmptyObject = (obj) => {
+	return !obj || Object.keys(obj).length === 0;
+};

@@ -1,14 +1,11 @@
 import ScheduleForm from "./ScheduleForm";
 
-const ScheduleToolbar = ({ yearInput, setYearInput, majorInput, setMajorInput, handleSubmit }) => {
+const ScheduleToolbar = ({ handleSubmit, scheduleMeta }) => {
 	return (
 		<div className="schedule-toolbar">
 			<ScheduleForm
-				yearInput={yearInput}
-				setYearInput={setYearInput}
-				majorInput={majorInput}
-				setMajorInput={setMajorInput}
 				handleSubmit={handleSubmit}
+				scheduleMeta={scheduleMeta}
 			/>
 		</div>
 	);

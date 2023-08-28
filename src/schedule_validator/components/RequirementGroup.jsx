@@ -7,7 +7,6 @@ const RequirementGroup = ({ group }) => {
                     <tr>
                         <th>Requirement</th>
                         <th>Fufilled</th>
-                        <th>Credits Fufilled</th>
                     </tr>
                 </thead>
                 <tbody>
