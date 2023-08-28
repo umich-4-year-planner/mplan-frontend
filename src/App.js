@@ -1,5 +1,6 @@
 import Header from "./Header";
 import Footer from "./Footer";
+import Construction from "./Construction";
 import ScheduleValidator from "./schedule_validator/components/ScheduleValidator.jsx";
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
 		<div className="App">
 			<Header />
 			<main className="main">
-				<ScheduleValidator />
+				<Construction />
+				{/* <ScheduleValidator /> */}
 			</main>
 			<Footer />
 		</div>

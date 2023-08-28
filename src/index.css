@@ -42,6 +42,12 @@ body {
 	background-image: linear-gradient(white, var(--HEADER-ACCENT));
 }
 
+.construction {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 /* SCHEDULE VALIDATOR*/
 
 .schedule-validator {
