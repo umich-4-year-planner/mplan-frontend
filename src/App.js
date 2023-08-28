@@ -8,8 +8,7 @@ function App() {
 		<div className="App">
 			<Header />
 			<main className="main">
-				<Construction />
-				{/* <ScheduleValidator /> */}
+				<ScheduleValidator />
 			</main>
 			<Footer />
 		</div>
