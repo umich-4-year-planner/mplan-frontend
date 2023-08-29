@@ -10,7 +10,7 @@ const ScheduleTableRow = ({ course, schedule, term, handleChangeCourse, handleDe
 	useEffect(() => {
 		if (courseInput === "") {
 			handleDeleteCourse(term, newCourse, schedule);
-			return
+			return;
 		}
 
 		const fetchCourseAndSave = async () => {
@@ -36,6 +36,10 @@ const ScheduleTableRow = ({ course, schedule, term, handleChangeCourse, handleDe
 		fetchCourseAndSave();
 	}, [courseInput]);
 
+	const copyToClipboard = (e) => {
+		navigator.clipboard.writeText(JSON.stringify(newCourse))
+	}
+
 	return (
 		<tr>
 			<td>
@@ -44,8 +48,7 @@ const ScheduleTableRow = ({ course, schedule, term, handleChangeCourse, handleDe
 			{showInfo ? (
 				<>
 					<td>{newCourse.name}</td>
-					<td>{newCourse.credits}</td>
-				
+					<td><button onClick={copyToClipboard}>{newCourse.credits}</button></td>
 				</>
 			) : (
 				<>

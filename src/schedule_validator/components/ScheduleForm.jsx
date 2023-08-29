@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 const ScheduleForm = ({ scheduleMeta, handleSubmit }) => {
-	const majors = ["Computer Engineering", "Robotic"];
+	const majors = ["Computer Engineering"];
 	const years = [2020, 2021, 2022, 2023, 2024];
 
 	return (
