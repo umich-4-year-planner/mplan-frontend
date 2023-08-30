@@ -16,7 +16,6 @@ const ScheduleTable = ({
         <thead>
           <tr key={0}>
             <th>Course ID</th>
-            <th>Course Name</th>
             <th>Credits</th>
           </tr>
         </thead>

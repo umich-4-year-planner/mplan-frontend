@@ -47,12 +47,12 @@ const ScheduleTableRow = ({ course, schedule, term, handleChangeCourse, handleDe
 			</td>
 			{showInfo ? (
 				<>
-					<td>{newCourse.name}</td>
+			
 					<td><button onClick={copyToClipboard}>{newCourse.credits}</button></td>
 				</>
 			) : (
 				<>
-					<td></td>
+				
 					<td></td>
 				</>
 			)}
