@@ -33,7 +33,7 @@ const generateEmptySchedule = (scheduleMeta) => {
     terms: [
       {
         name: "Transfer",
-        year: year,
+        year: parseInt(year),
         id: "tf",
         courses: [],
       },
