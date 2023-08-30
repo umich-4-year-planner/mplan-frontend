@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { generatePlaceholderCourse, isPlaceholderID } from "../lib/placeholder";
 
 import SearchCourse from "./SearchCourse";
 
@@ -13,6 +14,14 @@ const ScheduleTableRow = ({ course, schedule, term, handleChangeCourse, handleDe
 			return;
 		}
 
+		if (isPlaceholderID(courseInput)) {
+			const courseJSON = generatePlaceholderCourse(courseInput);
+			handleChangeCourse(term, schedule, courseJSON, newCourse);
+			setNewCourse(courseJSON);
+			setShowInfo(true);
+			return;
+		}
+
 		const fetchCourseAndSave = async () => {
 			try {
 				const baseUrl = process.env.REACT_APP_SERVER_BASE_URL;
@@ -24,7 +33,6 @@ const ScheduleTableRow = ({ course, schedule, term, handleChangeCourse, handleDe
 				if (courseJSON === null) {
 					setShowInfo(false);
 				} else {
-					console.log(`newCourse: ${newCourse.course_id}\ncourseInput: ${courseInput}`);
 					handleChangeCourse(term, schedule, courseJSON, newCourse);
 					setNewCourse(courseJSON);
 					setShowInfo(true);
@@ -37,8 +45,8 @@ const ScheduleTableRow = ({ course, schedule, term, handleChangeCourse, handleDe
 	}, [courseInput]);
 
 	const copyToClipboard = (e) => {
-		navigator.clipboard.writeText(JSON.stringify(newCourse))
-	}
+		navigator.clipboard.writeText(JSON.stringify(newCourse));
+	};
 
 	return (
 		<tr>
@@ -47,12 +55,12 @@ const ScheduleTableRow = ({ course, schedule, term, handleChangeCourse, handleDe
 			</td>
 			{showInfo ? (
 				<>
-			
-					<td><button onClick={copyToClipboard}>{newCourse.credits}</button></td>
+					<td>
+						<button onClick={copyToClipboard}>{newCourse.credits}</button>
+					</td>
 				</>
 			) : (
 				<>
-				
 					<td></td>
 				</>
 			)}

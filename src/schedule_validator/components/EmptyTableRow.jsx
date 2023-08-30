@@ -1,11 +1,19 @@
 import { useState, useEffect } from "react";
 import SearchCourse from "./SearchCourse";
+import { isPlaceholderID, generatePlaceholderCourse } from "../lib/placeholder";
 
 const EmptyTableRow = ({ handleAddCourse, schedule, term }) => {
 	const [courseInput, setCourseInput] = useState("");
 
 	useEffect(() => {
 		const fetchCourseAndSave = async () => {
+			if (isPlaceholderID(courseInput)) {
+				const courseJSON = generatePlaceholderCourse(courseInput);
+				handleAddCourse(courseJSON, schedule, term);
+				setCourseInput("");
+				return;
+			}
+
 			try {
 				const baseUrl = process.env.REACT_APP_SERVER_BASE_URL;
 				const response = await fetch(

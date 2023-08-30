@@ -155,7 +155,7 @@ body {
 }
 
 .schedule-table :is(form, form input) {
-	width: 8rem
+	width: 10rem
 }
 
 .schedule-table form input {
