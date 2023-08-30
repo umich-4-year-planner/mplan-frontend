@@ -4,18 +4,64 @@
 	box-sizing: border-box;
 }
 
+input,
+button,
+textarea {
+	font: inherit;
+}
+
 :root {
+	/* FONT */
+	--FF: "Roboto", sans-serif;
+	--FS: clamp(.75rem, 2.2vh, 1rem);
+
 	/* || COLORS */
 	--HEADER-COLOR: #00274c;
 	--HEADER-ACCENT: #ffc20f;
+	--FONT-COLOR: black;
+	--BGCOLOR: hsl(45, 100%, 90%);
+	--BGIMAGE: linear-gradient(white,#ffc20f);
+	
+	/* STANDARD PADDING */
+    --PADDING-TB: .25em;
+    --PADDING-SIDE: 2.5%;
+	
+}
+
+
+/* UTILITY CLASSES */
+.offscreen {
+	position: absolute;
+	left: 100000px;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.center {
+	text-align: center;
+}
+
+/* GENERAL STYLES */
+
+html {
+	scroll-behavior: smooth;
+	font-size: var(--FS);
+	font-family: var(--FF);
+	background-color: var(--BGCOLOR);
+	background-image: var(--BGIMAGE);
 }
 
 body {
 	min-height: 100vh;
-	font-family: "Roboto", sans-serif;
+	font-family: var(--FF);
+	color: var(--FONT-COLOR);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	
 }
+
 
 /* HEADER */
 .header {
@@ -29,6 +75,7 @@ body {
 	align-items: center;
 	position: sticky;
 	top: 0;
+	z-index: 1;
 }
 
 .header .logo {
@@ -39,7 +86,7 @@ body {
 
 .main {
 	min-height: calc(100vh - 9rem);
-	background-image: linear-gradient(white, var(--HEADER-ACCENT));
+	padding: var(--PADDING-TB) var(--PADDING-SIDE);
 }
 
 .construction {
@@ -57,12 +104,13 @@ body {
 	align-items: center;
 }
 
-.main .schedule-validator .schedule-report-container {
+.schedule-report-container {
 	min-height: calc(100vh - 9rem);
 	width: 100%;
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
+	flex-flow: row wrap;
+	gap: 1rem;
+	justify-content: space-between;
 	align-items: flex-start;
 }
 
@@ -102,47 +150,57 @@ body {
 
 /* SCHEDULE */
 
-.schedule-validator .schedule {
-	display: flex;
-	flex-flow: row wrap;
-	flex-basis: 70%;
-	padding: 1rem;
-	gap: 1rem;
+.schedule-container {
+	flex-basis: 70%
+}
+
+.schedule-container .schedule {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: .5rem
 }
 
 /* SCHEDULE TABLES */
-.schedule-validator .schedule-term {
+.schedule-term {
 	border: 2px solid black;
 	border-radius: 15px;
 	background-color: papayawhip;
-	text-align: center;
-	flex-basis: 32.4%;
+	text-align: left;
+}
+
+.schedule-term :is(th:last-child, td:last-child) {
+	text-align: right;
 }
 
 .schedule-validator .schedule-term:first-child {
-	flex-basis: 100%
+	grid-column: 1 / span 3;
 }
 
 .schedule-term .schedule-table {
 	border-spacing: 0;
-	font-family: sans-serif;
+	border-collapse: separate;
+	border-radius: 15px;
 	width: 100%;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .schedule-term h3 {
 	padding: 1rem 0;
+	text-align: center;
 }
 
-.schedule-table thead tr {
+.schedule-table th {
 	background-color: var(--HEADER-COLOR);
-	color: #ffffff;
-	text-align: left;
+	color: white;
 }
 
-.schedule-table th,
-.schedule-table td {
-	padding: 12px 15px;
+.schedule-table :is(th, td) {
+	padding: var(--PADDING-TB) var(--PADDING-SIDE)
+}
+
+.schedule-table :is(th:first-child, td:first-child) {
+	padding: var(--PADDING-TB) var(--PADDING-SIDE);
+	width: 80%;
 }
 
 
@@ -155,7 +213,8 @@ body {
 }
 
 .schedule-table :is(form, form input) {
-	width: 8rem
+	width: 10rem;
+	display: inline;
 }
 
 .schedule-table form input {
@@ -170,14 +229,41 @@ body {
 	left: -100000px;
 }
 
+.schedule-table tbody tr.schedule-table-footer {
+	background-color: var(--HEADER-COLOR);
+	color: white;
+}
+
+.tooltip {
+	position: relative;
+	display: inline;
+  }
+  
+  .tooltip .tooltiptext {
+	visibility: hidden;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+   
+	/* Position the tooltip text - see examples below! */
+	position: absolute;
+	top: 120%;
+	z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+	visibility: visible;
+  }
 /* REPORT */
 
 .report {
 	display: flex;
 	flex-flow: column nowrap;
-	flex-basis: 30%;
 	gap: 1rem;
-	padding: 1rem;
+	flex-basis: 28%;
 }
 .report .requirement-group {
 	border: 2px solid black;
@@ -186,10 +272,6 @@ body {
 	text-align: center;
 }
 
-.schedule-table tbody tr.schedule-table-footer {
-	background-color: var(--HEADER-COLOR);
-	color: white;
-}
 /* FOOTER */
 
 .footer {

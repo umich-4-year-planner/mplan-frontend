@@ -93,27 +93,42 @@ const ScheduleValidator = () => {
 	};
 
 	const copyToClipboard = (obj) => {
-		navigator.clipboard.writeText(JSON.stringify(obj))
-	}
- 
+		navigator.clipboard.writeText(JSON.stringify(obj));
+	};
+
 	return (
 		<div className="schedule-validator">
 			<ScheduleToolbar handleSubmit={handleSubmit} scheduleMeta={scheduleMeta} />
 			<div>
-				<button onClick={() => {copyToClipboard(schedule)}}> Copy Schedule </button>
-				<button onClick={() => {copyToClipboard(report)}}>Copy Report</button>
+				<button
+					onClick={() => {
+						copyToClipboard(schedule);
+					}}
+				>
+					{" "}
+					Copy Schedule{" "}
+				</button>
+				<button
+					onClick={() => {
+						copyToClipboard(report);
+					}}
+				>
+					Copy Report
+				</button>
 			</div>
-			
+
 			<div className="schedule-report-container">
 				{!isEmptyObject(schedule) ? (
 					<>
-						<Schedule
-							schedule={schedule}
-							setSchedule={setSchedule}
-							handleAddCourse={handleAddCourse}
-							handleChangeCourse={handleChangeCourse}
-							handleDeleteCourse={handleDeleteCourse}
-						/>
+						<div className="schedule-container">
+							<Schedule
+								schedule={schedule}
+								setSchedule={setSchedule}
+								handleAddCourse={handleAddCourse}
+								handleChangeCourse={handleChangeCourse}
+								handleDeleteCourse={handleDeleteCourse}
+							/>
+						</div>
 						<Report report={report} />
 					</>
 				) : (

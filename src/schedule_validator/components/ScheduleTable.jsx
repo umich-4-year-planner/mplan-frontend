@@ -16,7 +16,6 @@ const ScheduleTable = ({
         <thead>
           <tr key={0}>
             <th>Course ID</th>
-            <th>Course Name</th>
             <th>Credits</th>
           </tr>
         </thead>
@@ -39,7 +38,7 @@ const ScheduleTable = ({
             schedule={schedule}
             term={term}
           />
-         {/*  <ScheduleTableFooter term={term} schedule={schedule}/> */}
+          <ScheduleTableFooter term={term} schedule={schedule}/>
         </tbody>
       </table>
     </div>
