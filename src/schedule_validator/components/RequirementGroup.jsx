@@ -12,10 +12,9 @@ const RequirementGroup = ({ group }) => {
                 <tbody>
                     {group.requirements.map(requirement => {
                         return (
-                            <tr>
+                            <tr key={requirement.name}>
                                 <td>{requirement.name}</td>
                                 <td>{requirement.fufilled ? <>✅</> : <>❌</>}</td>
-                                
                             </tr>
                         )
                     })}

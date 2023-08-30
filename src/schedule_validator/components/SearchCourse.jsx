@@ -17,7 +17,7 @@ const SearchCourse = ({courseInput, setCourseInput}) => {
 				role="searchbox"
 				autoComplete="off"
 				value={courseInput}
-				placeholde={"Add Course"}
+				placeholder={"+ New Course"}
 				onChange={(e) => {
 					setCourseInput(e.target.value);
 				}}

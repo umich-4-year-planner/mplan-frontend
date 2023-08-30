@@ -6,7 +6,6 @@ import ScheduleToolbar from "./ScheduleToolbar.jsx";
 
 import generateEmptySchedule from "../lib/generateEmptySchedule.js";
 
-
 const ScheduleValidator = () => {
 	const [scheduleMeta, setScheduleMeta] = useState({
 		major: localStorage.getItem("major") || "",
@@ -22,13 +21,12 @@ const ScheduleValidator = () => {
 		}
 
 		localStorage.setItem("schedule", JSON.stringify(schedule));
-		const domain = process.env.NODE_ENV === "production" ? "https://mplan-api.onrender.com" : "http://localhost:4000";
-
 		const fetchReport = async (report) => {
 			if (!report) return;
 			try {
+				const baseUrl = process.env.REACT_APP_SERVER_BASE_URL;
 				const response = await fetch(
-					`${domain}/schedule-validator/validate-requirements/`,
+					`${baseUrl}/schedule-validator/validate-requirements/`,
 					{
 						method: "POST",
 						headers: {
@@ -55,7 +53,6 @@ const ScheduleValidator = () => {
 		if (scheduleMeta.major && scheduleMeta.year) {
 			setSchedule(generateEmptySchedule(scheduleMeta));
 		}
-
 	}, [scheduleMeta]);
 
 	const handleSubmit = (e) => {
@@ -65,7 +62,7 @@ const ScheduleValidator = () => {
 		const formData = new FormData(form);
 		const formJson = Object.fromEntries(formData.entries());
 
-		setScheduleMeta(formJson)
+		setScheduleMeta(formJson);
 	};
 
 	const handleChangeCourse = (term, schedule, courseJSON, newCourse) => {
@@ -95,12 +92,18 @@ const ScheduleValidator = () => {
 		setSchedule(newSchedule);
 	};
 
+	const copyToClipboard = (obj) => {
+		navigator.clipboard.writeText(JSON.stringify(obj))
+	}
+ 
 	return (
 		<div className="schedule-validator">
-			<ScheduleToolbar
-				handleSubmit={handleSubmit}
-				scheduleMeta={scheduleMeta}
-			/>
+			<ScheduleToolbar handleSubmit={handleSubmit} scheduleMeta={scheduleMeta} />
+			<div>
+				<button onClick={() => {copyToClipboard(schedule)}}> Copy Schedule </button>
+				<button onClick={() => {copyToClipboard(report)}}>Copy Report</button>
+			</div>
+			
 			<div className="schedule-report-container">
 				{!isEmptyObject(schedule) ? (
 					<>
@@ -110,7 +113,7 @@ const ScheduleValidator = () => {
 							handleAddCourse={handleAddCourse}
 							handleChangeCourse={handleChangeCourse}
 							handleDeleteCourse={handleDeleteCourse}
-						/> 
+						/>
 						<Report report={report} />
 					</>
 				) : (
