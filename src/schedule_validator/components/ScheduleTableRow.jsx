@@ -51,12 +51,14 @@ const ScheduleTableRow = ({ course, schedule, term, handleChangeCourse, handleDe
 	return (
 		<tr>
 			<td>
+				<span className="tooltip">ℹ️<span className="tooltiptext">{course.name}</span></span>
 				<SearchCourse courseInput={courseInput} setCourseInput={setCourseInput} />
+				
 			</td>
 			{showInfo ? (
 				<>
 					<td>
-						<button onClick={copyToClipboard}>{newCourse.credits}</button>
+						{newCourse.credits}
 					</td>
 				</>
 			) : (

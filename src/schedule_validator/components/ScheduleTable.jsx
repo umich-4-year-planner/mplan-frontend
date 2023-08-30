@@ -38,7 +38,7 @@ const ScheduleTable = ({
             schedule={schedule}
             term={term}
           />
-         {/*  <ScheduleTableFooter term={term} schedule={schedule}/> */}
+          <ScheduleTableFooter term={term} schedule={schedule}/>
         </tbody>
       </table>
     </div>

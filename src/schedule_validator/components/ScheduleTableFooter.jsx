@@ -14,9 +14,7 @@ const ScheduleTableFooter = ({ term, schedule }) => {
 
 	return (
 		<tr className="schedule-table-footer">
-			<td></td>
-			<td>Total Credits</td>
-			<td>{credits}</td>
+			<td colSpan={2}>Total Credits: {credits}</td>
 		</tr>
 	);
 };
