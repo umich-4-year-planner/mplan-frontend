@@ -13,21 +13,19 @@ textarea {
 :root {
 	/* FONT */
 	--FF: "Roboto", sans-serif;
-	--FS: clamp(.75rem, 2.2vh, 1rem);
+	--FS: clamp(0.75rem, 2.2vh, 1rem);
 
 	/* || COLORS */
 	--HEADER-COLOR: #00274c;
 	--HEADER-ACCENT: #ffc20f;
 	--FONT-COLOR: black;
 	--BGCOLOR: hsl(45, 100%, 90%);
-	--BGIMAGE: linear-gradient(white,#ffc20f);
-	
-	/* STANDARD PADDING */
-    --PADDING-TB: .25em;
-    --PADDING-SIDE: 2.5%;
-	
-}
+	--BGIMAGE: linear-gradient(white, #ffc20f);
 
+	/* STANDARD PADDING */
+	--PADDING-TB: 0.25em;
+	--PADDING-SIDE: 2.5%;
+}
 
 /* UTILITY CLASSES */
 .offscreen {
@@ -59,9 +57,7 @@ body {
 	color: var(--FONT-COLOR);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	
 }
-
 
 /* HEADER */
 .header {
@@ -124,7 +120,7 @@ body {
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
-	gap: .2rem;
+	gap: 0.2rem;
 }
 
 .schedule-toolbar :is(select, button) {
@@ -133,7 +129,7 @@ body {
 	font-size: 1.2rem;
 }
 
-.schedule-toolbar button {	
+.schedule-toolbar button {
 	background-color: var(--HEADER-COLOR);
 	color: var(--HEADER-ACCENT);
 }
@@ -145,19 +141,19 @@ body {
 
 .schedule-toolbar select {
 	background-color: #f1f1f1;
-	border: none
+	border: none;
 }
 
 /* SCHEDULE */
 
 .schedule-container {
-	flex-basis: 70%
+	flex-basis: 70%;
 }
 
 .schedule-container .schedule {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: .5rem
+	gap: 0.5rem;
 }
 
 /* SCHEDULE TABLES */
@@ -195,14 +191,13 @@ body {
 }
 
 .schedule-table :is(th, td) {
-	padding: var(--PADDING-TB) var(--PADDING-SIDE)
+	padding: var(--PADDING-TB) var(--PADDING-SIDE);
 }
 
 .schedule-table :is(th:first-child, td:first-child) {
 	padding: var(--PADDING-TB) var(--PADDING-SIDE);
 	width: 80%;
 }
-
 
 .schedule-table tbody tr {
 	border-bottom: 1px solid #dddddd;
@@ -218,7 +213,7 @@ body {
 }
 
 .schedule-table form input {
-	background-color: rgba(0,0,0,0);
+	background-color: rgba(0, 0, 0, 0);
 	border: none;
 	font-weight: bolder;
 	font-size: 1rem;
@@ -237,9 +232,9 @@ body {
 .tooltip {
 	position: relative;
 	display: inline;
-  }
-  
-  .tooltip .tooltiptext {
+}
+
+.tooltip .tooltiptext {
 	visibility: hidden;
 	width: 120px;
 	background-color: black;
@@ -247,16 +242,16 @@ body {
 	text-align: center;
 	padding: 5px 0;
 	border-radius: 6px;
-   
+
 	/* Position the tooltip text - see examples below! */
 	position: absolute;
 	top: 120%;
 	z-index: 1;
-  }
-  
-  .tooltip:hover .tooltiptext {
+}
+
+.tooltip:hover .tooltiptext {
 	visibility: visible;
-  }
+}
 /* REPORT */
 
 .report {
@@ -270,6 +265,30 @@ body {
 	border-radius: 15px;
 	background-color: papayawhip;
 	text-align: center;
+}
+
+.report .requirement-group h3 {
+	padding: 1rem 0;
+	border-bottom: 10px solid var(--HEADER-COLOR)
+}
+
+.report .requirement-container {
+	display: flex;
+	flex-flow: column nowrap;
+	padding: .5rem 1rem;
+}
+
+.requirement-container .requirement {
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr;
+	text-align: left;
+	border-bottom: 1px solid black;
+}
+.requirement .req-name {
+	font-weight: bolder;
+}
+.requirement .fufilled-by {
+	grid-column: 1 / span 3;
 }
 
 /* FOOTER */
