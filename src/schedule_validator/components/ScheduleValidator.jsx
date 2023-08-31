@@ -99,7 +99,7 @@ const ScheduleValidator = () => {
 	return (
 		<div className="schedule-validator">
 			<ScheduleToolbar handleSubmit={handleSubmit} scheduleMeta={scheduleMeta} />
-			<div>
+			{/* <div>
 				<button
 					onClick={() => {
 						copyToClipboard(schedule);
@@ -115,8 +115,8 @@ const ScheduleValidator = () => {
 				>
 					Copy Report
 				</button>
-			</div>
-
+			</div> */}
+			<div className="total-credits">Total Credits: {report.total_credits}</div>
 			<div className="schedule-report-container">
 				{!isEmptyObject(schedule) ? (
 					<>
