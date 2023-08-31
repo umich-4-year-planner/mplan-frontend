@@ -44,9 +44,9 @@ export const isPlaceholderID = (course_id) => {
 const validPlaceholderSubjects = {
 	INTBREADTH: "Intellectual Breadth",
 	CECORE: "Computer Engineering Core Electives",
-	CEULTE: "Computer Engineering Upper Level Tech Electives",
+	CEULCE: "Computer Engineering Upper Level Electives",
 	CEMDE: "Computer Engineering Major Design Experience",
-	CEECS: "Computer Engineering EECS Elective",
+	CEEECS: "Computer Engineering EECS Elective",
 	CEFLEX: "Computer Engineering Flexible Technical Electives",
 	GEN: "General Electives",
 };

@@ -1,31 +1,42 @@
+import FufilledBy from "./FufilledBy";
+
 const Requirement = ({ requirement }) => {
+	const copyToClipboard = () => navigator.clipboard.writeText(requirement.placeholder);
 	return (
-		<>
-			<tr className="requirement-row-1">
-				<td>{requirement.fufilled ? <>✅</> : <>❌</>}</td>
-				<td>{requirement.name}</td>
-				<td>
-					{requirement.content.credit ? (
-						<>
-							{requirement.credits_fufilled + (requirement?.credits_overflow || 0)} / {requirement.content.credit}
-						</>
-					) : (
-						<> </>
-					)}
-				</td>
-			</tr>
-			<tr className="requirement-row-2">
-				<td colSpan={3}>
-					{requirement.fufilled_by.map((id, i) => {
-						return i === requirement.fufilled_by.length - 1 ? (
-							<> {id} </>
-						) : (
-							<> {id}, </>
-						);
-					})}
-				</td>
-			</tr>
-		</>
+		<div className="requirement">
+			<div>{requirement.fufilled ? <>✅</> : <>❌</>}</div>
+			<div className="req-name">
+				{requirement.placeholder ? (
+					<>
+						<span className="placeholder-tooltip" onClick={copyToClipboard}>
+							{requirement.name}
+							<span className="placeholder-tooltiptext">
+								Placeholder: {requirement.placeholder}
+							</span>
+						</span>
+					</>
+				) : (
+					<>{requirement.name}</>
+				)}
+			</div>
+			<div>
+				{requirement.content.credit ? (
+					<>
+						{requirement.credits_fufilled + (requirement?.credits_overflow || 0)} /{" "}
+						{requirement.content.credit}
+					</>
+				) : (
+					<> </>
+				)}
+			</div>
+			<div className="fufilled-by">
+				{requirement.fufilled_by.length != 0 ? (
+					<FufilledBy requirement={requirement}/>
+				) : (
+					<></>
+				)}
+			</div>
+		</div>
 	);
 };
 export default Requirement;

@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { generatePlaceholderCourse, isPlaceholderID } from "../lib/placeholder";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+
 
 import SearchCourse from "./SearchCourse";
 
@@ -51,7 +54,8 @@ const ScheduleTableRow = ({ course, schedule, term, handleChangeCourse, handleDe
 	return (
 		<tr>
 			<td>
-				<span className="tooltip">ℹ️<span className="tooltiptext">{course.name}</span></span>
+				<span className="tooltip"> <FontAwesomeIcon icon={faCircleInfo} style={{color: "#00274c",}} /><span className="tooltiptext">{course.name}</span></span>
+				{"  "}
 				<SearchCourse courseInput={courseInput} setCourseInput={setCourseInput} />
 				
 			</td>
