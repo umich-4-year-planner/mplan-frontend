@@ -18,7 +18,7 @@ const HelpScreen = () => {
 					After clicking create schedule, an empty schedule and report should pop up, from
 					here you can start adding classes to the schedule. Classes are inputted in the
 					format from the LSA Course guide, for example: EECS280 or MATH116. As you add
-					classes to the schedule, the report should automatically start updating
+					classes to the schedule, the report should automatically start updating.
 				</p>
 
 				<h2>Using Placeholders</h2>
