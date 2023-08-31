@@ -59,13 +59,17 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
 /* HEADER */
 .header {
 	background-color: var(--HEADER-COLOR);
 	color: var(--HEADER-ACCENT);
 	width: 100%;
-	font-size: 5rem;
-	font-weight: bolder;
+	
 	height: 6rem;
 	display: flex;
 	align-items: center;
@@ -76,6 +80,26 @@ body {
 
 .header .logo {
 	padding: 1rem;
+	font-size: 5rem;
+	font-weight: bolder;
+}
+
+.header .nav {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+	margin-right: 3rem;
+	align-items: center;
+	width: 100%;
+}
+
+.nav-item, .nav-item:visited {
+	padding: .4rem 1rem;
+	border: 3px solid var(--HEADER-ACCENT);
+	font-weight: bolder;
+	border-radius: 15px;
+	color: var(--HEADER-ACCENT);
+	text-decoration: none;
 }
 
 /* MAIN */
@@ -289,6 +313,31 @@ body {
 }
 .requirement .fufilled-by {
 	grid-column: 1 / span 3;
+}
+
+.placeholder-tooltip {
+	position: relative;
+	display: inline;
+	border-bottom: 2px dotted black;
+}
+
+.placeholder-tooltip .placeholder-tooltiptext {
+	visibility: hidden;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+
+	/* Position the placeholder-tooltip text - see examples below! */
+	position: absolute;
+	top: 120%;
+	z-index: 1;
+}
+
+.placeholder-tooltip:hover .placeholder-tooltiptext {
+	visibility: visible;
 }
 
 /* FOOTER */
