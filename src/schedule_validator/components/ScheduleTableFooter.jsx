@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 const ScheduleTableFooter = ({ term, schedule }) => {
 	const [credits, setCredits] = useState(0);
 
-    console.log(`${term.name}: ${credits}`)
-
     useEffect(() => {
         let newCredits = 0
         const termIndex = schedule.terms.findIndex(x => x.id === term.id);
