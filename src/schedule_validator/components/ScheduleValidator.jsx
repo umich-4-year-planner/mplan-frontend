@@ -12,8 +12,25 @@ const ScheduleValidator = () => {
 		year: localStorage.getItem("year") || "",
 	});
 	const [schedule, setSchedule] = useState(JSON.parse(localStorage.getItem("schedule")) || {});
-
+	const [serverUp, setServerUp] = useState(false);
 	const [report, setReport] = useState({});
+
+	useEffect(() => {
+		const testServerUp = async () => {
+			try {
+				console.log("Server starting up");
+				const baseUrl = process.env.REACT_APP_SERVER_BASE_URL;
+				const response = await fetch(`${baseUrl}/test`);
+				let reportJSON = await response.json();
+				setServerUp(true);
+				console.log("Server is up and running");
+			} catch (err) {
+				console.error(err);
+			}
+		};
+
+		testServerUp();
+	}, []);
 
 	useEffect(() => {
 		if (isEmptyObject(schedule)) {
@@ -97,9 +114,12 @@ const ScheduleValidator = () => {
 	};
 
 	return (
-		<div className="schedule-validator">
-			<ScheduleToolbar handleSubmit={handleSubmit} scheduleMeta={scheduleMeta} />
-			{/* <div>
+		<>
+			{" "}
+			{serverUp ? (
+				<div className="schedule-validator">
+					<ScheduleToolbar handleSubmit={handleSubmit} scheduleMeta={scheduleMeta} />
+					{/* <div>
 				<button
 					onClick={() => {
 						copyToClipboard(schedule);
@@ -116,28 +136,32 @@ const ScheduleValidator = () => {
 					Copy Report
 				</button>
 			</div> */}
-			<div className="total-credits">Total Credits: {report.total_credits}</div>
-			<div className="schedule-report-container">
-				{!isEmptyObject(schedule) ? (
-					<>
-						<div className="schedule-container">
-							<Schedule
-								schedule={schedule}
-								setSchedule={setSchedule}
-								handleAddCourse={handleAddCourse}
-								handleChangeCourse={handleChangeCourse}
-								handleDeleteCourse={handleDeleteCourse}
-							/>
-						</div>
-						<Report report={report} />
-					</>
-				) : (
-					<>
-						<p>empty</p>
-					</>
-				)}
-			</div>
-		</div>
+					<div className="total-credits">Total Credits: {report.total_credits}</div>
+					<div className="schedule-report-container">
+						{!isEmptyObject(schedule) ? (
+							<>
+								<div className="schedule-container">
+									<Schedule
+										schedule={schedule}
+										setSchedule={setSchedule}
+										handleAddCourse={handleAddCourse}
+										handleChangeCourse={handleChangeCourse}
+										handleDeleteCourse={handleDeleteCourse}
+									/>
+								</div>
+								<Report report={report} />
+							</>
+						) : (
+							<>
+								<p></p>
+							</>
+						)}
+					</div>
+				</div>
+			) : (
+				<div> Server is Starting up, please wait a few seconds.</div>
+			)}
+		</>
 	);
 };
 export default ScheduleValidator;

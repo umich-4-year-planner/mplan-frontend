@@ -1,4 +1,9 @@
-import scheduleFormImg from "../img/schedule-form.png";
+import scheduleFormImg from "../img/schedule-form1170x156.png";
+import termImg from "../img/term764x606.png";
+import reportImg from "../img/report964x906.png";
+import placholderImg from "../img/placeholder938x282.png";
+import placeholderTermImg from "../img/placeholder-term757x300.png";
+import placeholderReportImg from "../img/placeholder-report918x342.png"
 
 const HelpScreen = () => {
 	return (
@@ -13,6 +18,14 @@ const HelpScreen = () => {
 				<figure>
 					<img src={scheduleFormImg} alt="Schedule Form" />
 					<figcaption>Figure 1 - Schedule Form</figcaption>
+				</figure>
+				<figure>
+					<img src={termImg} alt="Schedule Term" />
+					<figcaption>Figure 2 - Schedule Term</figcaption>
+				</figure>
+				<figure>
+					<img src={reportImg} alt="Report" />
+					<figcaption>Figure 3 - Report</figcaption>
 				</figure>
 				<p>
 					After clicking create schedule, an empty schedule and report should pop up, from
@@ -32,6 +45,18 @@ const HelpScreen = () => {
 					level and the last digit is the number of credits. An example: INTBREADTH304
 					would count as a 300 level , 4 credit intellecual breadth course
 				</p>
+				<figure>
+					<img src={placholderImg} alt="Placeholder" />
+					<figcaption>Figure 4 - Placeholder</figcaption>
+				</figure>
+				<figure>
+					<img src={placeholderTermImg} alt="Placeholder Term" />
+					<figcaption>Figure 5 - Placeholder Term</figcaption>
+				</figure>
+				<figure>
+					<img src={placeholderReportImg} alt="Placeholder Report" />
+					<figcaption>Figure 6 - Placeholder Report</figcaption>
+				</figure>
 			</section>
 		</main>
 	);
