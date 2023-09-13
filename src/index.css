@@ -316,7 +316,7 @@ a {
 .requirement .req-name {
 	font-weight: bolder;
 }
-.requirement .fufilled-by {
+.requirement .fulfilled-by {
 	grid-column: 1 / span 3;
 }
 

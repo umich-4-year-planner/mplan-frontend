@@ -1,4 +1,5 @@
 const generateEmptySchedule = (scheduleMeta) => {
+  console.log("Generate Empty")
   const {major, year} = scheduleMeta;
   const yearInt = parseInt(year)
 
