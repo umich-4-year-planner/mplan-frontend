@@ -10,7 +10,7 @@ const Requirement = ({ requirement }) => {
 					<>
 						<span className="placeholder-tooltip" onClick={copyToClipboard}>
 							<span className="placeholder-tooltiptext">
-								Placeholder: {requirement.placeholder}
+								Placeholder: {requirement.placeholder[0]}
 							</span>
 							{requirement.name}
 						</span>
