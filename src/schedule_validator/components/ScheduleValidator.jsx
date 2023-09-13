@@ -14,16 +14,14 @@ const ScheduleValidator = () => {
 	const [schedule, setSchedule] = useState(JSON.parse(localStorage.getItem("schedule")) || {});
 	const [serverUp, setServerUp] = useState(false);
 	const [report, setReport] = useState({});
-
+ 
 	useEffect(() => {
 		const testServerUp = async () => {
 			try {
-				console.log("Server starting up");
 				const baseUrl = process.env.REACT_APP_SERVER_BASE_URL;
 				const response = await fetch(`${baseUrl}/test`);
 				let reportJSON = await response.json();
 				setServerUp(true);
-				console.log("Server is up and running");
 			} catch (err) {
 				console.error(err);
 			}
@@ -36,6 +34,8 @@ const ScheduleValidator = () => {
 		if (isEmptyObject(schedule)) {
 			return;
 		}
+		console.log("schedule Use Effect")
+		console.log(schedule)
 
 		localStorage.setItem("schedule", JSON.stringify(schedule));
 		const fetchReport = async (report) => {
@@ -66,10 +66,6 @@ const ScheduleValidator = () => {
 		const { major, year } = scheduleMeta;
 		if (major) localStorage.setItem("major", major);
 		if (year) localStorage.setItem("year", year);
-
-		if (scheduleMeta.major && scheduleMeta.year) {
-			setSchedule(generateEmptySchedule(scheduleMeta));
-		}
 	}, [scheduleMeta]);
 
 	const handleSubmit = (e) => {
@@ -80,6 +76,7 @@ const ScheduleValidator = () => {
 		const formJson = Object.fromEntries(formData.entries());
 
 		setScheduleMeta(formJson);
+		setSchedule(generateEmptySchedule(formJson));
 	};
 
 	const handleChangeCourse = (term, schedule, courseJSON, newCourse) => {
