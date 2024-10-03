@@ -1,4 +1,4 @@
-import FulfilledBy from "./FulfilledBy";
+import RequirementDetails from "./RequirementDetails";
 
 const Requirement = ({ requirement }) => {
 	const copyToClipboard = () => navigator.clipboard.writeText(requirement.placeholder);
@@ -30,8 +30,8 @@ const Requirement = ({ requirement }) => {
 				)}
 			</div>
 			<div className="fulfilled-by">
-				{requirement.fulfilled_by.length != 0 ? (
-					<FulfilledBy requirement={requirement}/>
+				{requirement.fulfilled_by.length !== 0 ? (
+					<RequirementDetails requirement={requirement} />
 				) : (
 					<></>
 				)}

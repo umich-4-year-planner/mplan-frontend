@@ -11,10 +11,14 @@ const ScheduleValidator = () => {
 		major: localStorage.getItem("major") || "",
 		year: localStorage.getItem("year") || "",
 	});
-	const [schedule, setSchedule] = useState(JSON.parse(localStorage.getItem("schedule")) || {});
+	const [schedule, setSchedule] = useState(
+		localStorage.getItem("schedule")
+			? JSON.parse(localStorage.getItem("schedule"))
+			: {}
+	);
 	const [serverUp, setServerUp] = useState(false);
 	const [report, setReport] = useState({});
- 
+
 	useEffect(() => {
 		const testServerUp = async () => {
 			try {
@@ -34,8 +38,6 @@ const ScheduleValidator = () => {
 		if (isEmptyObject(schedule)) {
 			return;
 		}
-		console.log("schedule Use Effect")
-		console.log(schedule)
 
 		localStorage.setItem("schedule", JSON.stringify(schedule));
 		const fetchReport = async (report) => {
@@ -116,23 +118,23 @@ const ScheduleValidator = () => {
 			{serverUp ? (
 				<div className="schedule-validator">
 					<ScheduleToolbar handleSubmit={handleSubmit} scheduleMeta={scheduleMeta} />
-					{/* <div>
-				<button
-					onClick={() => {
-						copyToClipboard(schedule);
-					}}
-				>
-					{" "}
-					Copy Schedule{" "}
-				</button>
-				<button
-					onClick={() => {
-						copyToClipboard(report);
-					}}
-				>
-					Copy Report
-				</button>
-			</div> */}
+					<div>
+						<button
+							onClick={() => {
+								copyToClipboard(schedule);
+							}}
+						>
+							{" "}
+							Copy Schedule{" "}
+						</button>
+						<button
+							onClick={() => {
+								copyToClipboard(report);
+							}}
+						>
+							Copy Report
+						</button>
+					</div>
 					<div className="total-credits">Total Credits: {report.total_credits}</div>
 					<div className="schedule-report-container">
 						{!isEmptyObject(schedule) ? (

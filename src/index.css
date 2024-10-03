@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
 	margin: 0;
 	padding: 0;
@@ -69,7 +73,7 @@ a {
 	background-color: var(--HEADER-COLOR);
 	color: var(--HEADER-ACCENT);
 	width: 100%;
-	
+
 	height: 6rem;
 	display: flex;
 	align-items: center;
@@ -93,7 +97,8 @@ a {
 	width: 100%;
 }
 
-.nav-item, .nav-item:visited {
+.nav-item,
+.nav-item:visited {
 	padding: .4rem 1rem;
 	border: 3px solid var(--HEADER-ACCENT);
 	font-weight: bolder;
@@ -281,6 +286,7 @@ a {
 .tooltip:hover .tooltiptext {
 	visibility: visible;
 }
+
 /* REPORT */
 
 .report {
@@ -289,6 +295,7 @@ a {
 	gap: 1rem;
 	flex-basis: 28%;
 }
+
 .report .requirement-group {
 	border: 2px solid black;
 	border-radius: 15px;
@@ -313,9 +320,11 @@ a {
 	text-align: left;
 	border-bottom: 1px solid black;
 }
+
 .requirement .req-name {
 	font-weight: bolder;
 }
+
 .requirement .fulfilled-by {
 	grid-column: 1 / span 3;
 }

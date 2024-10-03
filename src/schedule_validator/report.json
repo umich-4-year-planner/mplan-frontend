@@ -1,0 +1,407 @@
+{
+	"name": "My Schedule",
+	"total_credits": 129,
+	"requirement_groups": [
+		{
+			"name": "COE Common Core",
+			"requirements": [
+				{
+					"name": "Chemistry Lecture",
+					"type": "course-choose",
+					"content": { "choices": ["CHEM130", "CHEM210"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["CHEM130"]
+				},
+				{
+					"name": "Chemistry Lab",
+					"type": "course-group-choose",
+					"content": { "groups": [["CHEM125", "CHEM126"], ["CHEM211"]] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["CHEM125", "CHEM126"]
+				},
+				{
+					"name": "Introduction to Engineering",
+					"type": "course",
+					"content": { "choices": ["ENGR100"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["ENGR100"]
+				},
+				{
+					"name": "Introduction to Programming",
+					"type": "course-choose",
+					"content": { "choices": ["ENGR101", "ENGR151", "EECS180"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["ENGR151"]
+				},
+				{
+					"name": "Calculus 1",
+					"type": "course-choose",
+					"content": { "choices": ["MATH115", "MATH120"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["MATH120"]
+				},
+				{
+					"name": "Calculus 2",
+					"type": "course-choose",
+					"content": { "choices": ["MATH116", "MATH156", "MATH121"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["MATH156"]
+				},
+				{
+					"name": "Multivariable Calculus",
+					"type": "course-choose",
+					"content": { "choices": ["MATH215", "MATH285"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["MATH215"]
+				},
+				{
+					"name": "Differential Equations",
+					"type": "course-choose",
+					"content": { "choices": ["MATH216", "MATH286"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["MATH216"]
+				},
+				{
+					"name": "General Physics 1 Lecture",
+					"type": "course-choose",
+					"content": { "choices": ["PHYSICS140", "PHYSICS160"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["PHYSICS140"]
+				},
+				{
+					"name": "General Physics 1 Lab",
+					"type": "course-choose",
+					"content": { "choices": ["PHYSICS141", "PHYSICS161"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["PHYSICS141"]
+				},
+				{
+					"name": "General Physics 2 Lecture",
+					"type": "course-choose",
+					"content": { "choices": ["PHYSICS240", "PHYSICS260"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["PHYSICS240"]
+				},
+				{
+					"name": "General Physics 2 Lab",
+					"type": "course-choose",
+					"content": { "choices": ["PHYSICS241", "PHYSICS261"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["PHYSICS241"]
+				}
+			]
+		},
+		{
+			"name": "Intellectual Breadth",
+			"requirements": [
+				{
+					"name": "General Intellectual Breadth",
+					"type": "int-breadth-general",
+					"content": { "credit": 16 },
+					"overflow": "General Electives",
+					"placeholder": ["IB", "IBHU"],
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": [
+						"LING193",
+						"IBHU303",
+						"MUSICOL122",
+						"THEORY137",
+						"PAT305",
+						"COMP221"
+					],
+					"credits_fulfilled": 16,
+					"credits_overflow": 1
+				},
+				{
+					"name": "300 Level Intellectual Breadth",
+					"type": "int-breadth-300",
+					"placeholder": ["IB", "IBHU"],
+					"content": { "credit": 3 },
+					"exclusive": false,
+					"fulfilled": true,
+					"fulfilled_by": ["IBHU303"],
+					"credits_fulfilled": 3
+				},
+				{
+					"name": "Intellectual Breadth Humanities",
+					"type": "int-breadth-humanities",
+					"placeholder": ["IBHU"],
+					"content": { "credit": 3 },
+					"exclusive": false,
+					"fulfilled": true,
+					"fulfilled_by": ["IBHU303", "MUSICOL122", "THEORY137"],
+					"credits_fulfilled": 9
+				}
+			]
+		},
+		{
+			"name": "CE Program Subjects",
+			"requirements": [
+				{
+					"name": "Discrete Math",
+					"type": "course",
+					"content": { "choices": ["EECS203"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["EECS203"]
+				},
+				{
+					"name": "Introduction to Electronic Circuits",
+					"type": "course",
+					"content": { "choices": ["EECS215"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["EECS215"]
+				},
+				{
+					"name": "Introduction to Signals and Systems",
+					"type": "course",
+					"content": { "choices": ["EECS216"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["EECS216"]
+				},
+				{
+					"name": "Introduction to Logic Design",
+					"type": "course",
+					"content": { "choices": ["EECS270"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["EECS270"]
+				},
+				{
+					"name": "Programming and Introductory Data Structures",
+					"type": "course",
+					"content": { "choices": ["EECS280"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["EECS280"]
+				},
+				{
+					"name": "Probability",
+					"type": "course-choose",
+					"content": { "choices": ["EECS301", "MATH425", "STATS412"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["STATS412"]
+				},
+				{
+					"name": "Introduction to Computer Organization",
+					"type": "course",
+					"content": { "choices": ["EECS370"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["EECS370"]
+				},
+				{
+					"name": "Major Design Experience Professionalism",
+					"type": "course",
+					"content": { "choices": ["EECS496"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["EECS496"]
+				},
+				{
+					"name": "Technical Communication for EECS",
+					"type": "course",
+					"content": { "choices": ["TCHNCLCM300"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["TCHNCLCM300"]
+				},
+				{
+					"name": "Advanced Technical Communication for ECE",
+					"type": "course",
+					"content": { "choices": ["TCHNCLCM496"] },
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["TCHNCLCM496"]
+				}
+			]
+		},
+		{
+			"name": "Electives",
+			"requirements": [
+				{
+					"name": "Core Electives",
+					"type": "course-choose-n",
+					"content": { "n": 2, "choices": ["EECS281", "EECS312", "EECS351", "EECS373"] },
+					"placeholder": ["CECORE"],
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["EECS281", "EECS373"]
+				},
+				{
+					"name": "General Upper Level CE Electives",
+					"type": "credit-choose",
+					"content": {
+						"credit": 10,
+						"choices": [
+							"EECS427",
+							"EECS442",
+							"EECS452",
+							"EECS461",
+							"EECS467",
+							"EECS470",
+							"EECS471",
+							"EECS473",
+							"EECS478",
+							"EECS482",
+							"EECS483",
+							"EECS489",
+							"EECS491",
+							"EECS507",
+							"EECS527",
+							"EECS570",
+							"EECS573",
+							"EECS578",
+							"EECS582",
+							"EECS583",
+							"EECS589",
+							"EECS627"
+						]
+					},
+					"overflow": "EECS Electives",
+					"placeholder": ["CEULCE", "CEMDE"],
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["EECS473", "EECS461", "EECS482"],
+					"credits_fulfilled": 10,
+					"credits_overflow": 2,
+					"overflow_from": []
+				},
+				{
+					"name": "Major Design Experience",
+					"type": "course-choose",
+					"content": {
+						"choices": ["EECS427", "EECS452", "EECS467", "EECS470", "EECS473"]
+					},
+					"placeholder": ["CEMDE"],
+					"exclusive": false,
+					"fulfilled": true,
+					"fulfilled_by": ["EECS473"]
+				},
+				{
+					"name": "EECS Electives",
+					"type": "credit-choose",
+					"content": {
+						"credit": 3,
+						"choices": [
+							"EECS281",
+							"EECS311",
+							"EECS312",
+							"EECS320",
+							"EECS330",
+							"EECS334",
+							"EECS351",
+							"EECS367",
+							"EECS373",
+							"EECS376",
+							"EECS381",
+							"EECS388",
+							"EECS411",
+							"EECS413",
+							"EECS414",
+							"EECS417",
+							"EECS419",
+							"EECS420",
+							"EECS421",
+							"EECS423",
+							"EECS424",
+							"EECS427",
+							"EECS428",
+							"EECS429",
+							"EECS430",
+							"EECS434",
+							"EECS435",
+							"EECS438",
+							"EECS441",
+							"EECS442",
+							"EECS444",
+							"EECS445",
+							"EECS452",
+							"EECS453",
+							"EECS455",
+							"EECS458",
+							"EECS460",
+							"EECS461",
+							"EECS464",
+							"EECS465",
+							"EECS467",
+							"EECS470",
+							"EECS471",
+							"EECS473",
+							"EECS475",
+							"EECS477",
+							"EECS478",
+							"EECS480",
+							"EECS481",
+							"EECS482",
+							"EECS483",
+							"EECS484",
+							"EECS485",
+							"EECS486",
+							"EECS487",
+							"EECS489",
+							"EECS490",
+							"EECS491",
+							"EECS492",
+							"EECS493",
+							"EECS494",
+							"EECS49",
+							"CEEL100"
+						]
+					},
+					"overflow": "Flexible Technical Electives",
+					"placeholder": ["CEEECS"],
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["EECS388"],
+					"credits_fulfilled": 3,
+					"credits_overflow": 3,
+					"overflow_from": ["General Upper Level CE Electives"]
+				},
+				{
+					"name": "Flexible Technical Electives",
+					"type": "special-ce-flex-tech",
+					"content": { "credit": 7 },
+					"overflow": "General Electives",
+					"placeholder": ["CEFLEX"],
+					"exclusive": true,
+					"fulfilled": true,
+					"fulfilled_by": ["MATH214", "CEFLEX302"],
+					"credits_fulfilled": 7,
+					"credits_overflow": 2,
+					"overflow_from": ["EECS Electives"]
+				},
+				{
+					"name": "General Electives",
+					"type": "general-electives",
+					"content": { "credit": 13 },
+					"placeholder": ["GEN"],
+					"exclusive": true,
+					"fulfilled": false,
+					"fulfilled_by": ["STATS180", "ENGR110", "GEN102"],
+					"credits_fulfilled": 10,
+					"overflow_from": [
+						"General Intellectual Breadth",
+						"Flexible Technical Electives"
+					]
+				}
+			]
+		}
+	]
+}
